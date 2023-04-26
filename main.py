@@ -6,9 +6,11 @@ def print_hi(name):
     a=3
     print(f'Hi, {name}'," ", a)  # Press Ctrl+F8 to toggle the breakpoint.
 
-def pr_return():
-    return 1
+def pr_return(a,b):
+    return a+b
 
+def pr_return(a,b,c):
+    return a+b-c
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
