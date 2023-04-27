@@ -1,20 +1,15 @@
 import math
+import requests
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    a=3
-    print(f'Hi, {name}'," ", a)  # Press Ctrl+F8 to toggle the breakpoint.
-
-def pr_return(a,b):
-    return a+b
-
-def pr_return(a,b,c):
-    return a+b-c
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
-    print("hello")
+    api_url = 'http://api.open-notify.org/iss-now.json'
+
+    response = requests.get(api_url)  # Отправляем GET-запрос и сохраняем ответ в переменной response
+
+    if response.status_code == 200:  # Если код ответа на запрос - 200, то смотрим, что пришло в ответе
+        print(response.text)
+    else:
+        print(response.status_code)
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
